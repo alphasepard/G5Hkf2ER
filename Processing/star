@@ -3,6 +3,6 @@ public class Star {
   public  float y;
   public  float z;
   public int Zone;// numero de zone auquelle elle appartient
-  public id; //numero de creation [1-npartTotal] 
+  public int id; //numero de creation [1-npartTotal] 
   
 }
