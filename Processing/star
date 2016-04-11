@@ -1,4 +1,4 @@
-public class CityType {
+public class Star {
   public  int x;
   public  int y;
   
