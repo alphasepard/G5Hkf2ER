@@ -27,6 +27,8 @@ int X;
 int Y;
 
 void setup() {
+  
+  //Partie video
   String[] cameras = Capture.list();
   
   video = new Capture(this, 640, 480,cameras[0]);
@@ -36,8 +38,10 @@ void setup() {
   opencv = new OpenCV(this, video.width, video.height);
   contours = new ArrayList<Contour>();
   
-  //size(2*opencv.width, opencv.height, P2D);
   size(640,480);
+  
+  //Partie Osc
+  myRemoteLocation = new NetAddress("127.0.0.1",7111);
 }
 
 void draw() {
