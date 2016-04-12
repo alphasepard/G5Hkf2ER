@@ -7,7 +7,7 @@
  *
  * University of Applied Sciences Potsdam, 2014
  */
- 
+
 import gab.opencv.*;
 import processing.video.*;
 import java.awt.Rectangle;
@@ -23,6 +23,8 @@ int largeur=480;
 // <1> Set the range of Hue values for our filter
 int rangeLow = 20;
 int rangeHigh = 35;
+int X;
+int Y;
 
 void setup() {
   String[] cameras = Capture.list();
@@ -87,8 +89,10 @@ void draw() {
     // <10> Find the bounding box of the largest contour,
     //      and hence our object.
     Rectangle r = biggestContour.getBoundingBox();
-    coordX = float(r.x) / float(640);
-    coordY = float(r.y) / float(480);
+    coordX = float(r.x) / float(largeur);
+    coordY = float(r.y) / float(hauteur);
+    //X = r.x;
+    //Y = r.y;
     
     println(" x: " + r.x + " " + coordX);
     println(" y: " + r.y + " " + coordY);
@@ -100,9 +104,10 @@ void draw() {
     rect(r.x, r.y, r.width, r.height);*/
     
      //<12> Draw a dot in the middle of the bounding box, on the object.
-    noStroke(); 
+   /* noStroke(); 
     fill(255, 0, 0);
-    ellipse(r.x + r.width/2, r.y + r.height/2, 30, 30);
+    ellipse(r.x + r.width/2, r.y + r.height/2, 30, 30);*/
+    //this.circule();
   }
 }
 
